@@ -3,7 +3,6 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import CreateNote from "./pages/CreateNote";
-import Login from "./pages/Login";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 
@@ -60,7 +59,6 @@ function App() {
           element={<Home isAuth={isAuth} setIsAuth={setIsAuth} />}
         />
         <Route path="/createnote" element={<CreateNote isAuth={isAuth} />} />
-        <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
     </Router>
   );
