@@ -27,7 +27,9 @@ function CreateNote({ isAuth }) {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="w-full max-w-md p-4 bg-white rounded-lg mt-16">
-        <h2 className="text-4xl font-bold text-center mb-4">Create a Note</h2>
+        <h2 className="text-4xl font-bold text-center mb-4">
+          Create a Public Note
+        </h2>
 
         <div className="mb-4">
           <label

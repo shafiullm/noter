@@ -14,28 +14,30 @@ function App() {
     signOut(auth).then(() => {
       localStorage.clear();
       setIsAuth(false);
-      window.location.pathname = "/login";
+      window.location.pathname = "/";
     });
   };
 
   return (
     <Router>
-      <nav className="flex justify-center space-x-7 text-lg font-semibold p-2 bg-white">
+      <nav className="flex justify-center space-x-7 text-xl font-semibold p-2 bg-white">
         <Link
-          to="/"
+          to=""
           className="text-black hover:text-gray-500 transition-colors duration-300"
         >
-          Home
+          {isAuth ? (
+            "Notes"
+          ) : (
+            <img
+              src="favicon_io\noter-logo.png"
+              alt="Noter"
+              className="h-10"
+              style={{ cursor: "default" }} // You can adjust the size as needed
+            />
+          )}
         </Link>
 
-        {!isAuth ? (
-          <Link
-            to="/login"
-            className="text-black hover:text-gray-500 transition-colors duration-300"
-          >
-            Login
-          </Link>
-        ) : (
+        {isAuth && (
           <>
             <Link
               to="/createnote"
@@ -53,7 +55,10 @@ function App() {
         )}
       </nav>
       <Routes>
-        <Route path="/" element={<Home isAuth={isAuth} />} />
+        <Route
+          path="/"
+          element={<Home isAuth={isAuth} setIsAuth={setIsAuth} />}
+        />
         <Route path="/createnote" element={<CreateNote isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
