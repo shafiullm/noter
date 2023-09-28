@@ -39,7 +39,7 @@ function Home({ isAuth, setIsAuth }) {
                 Sign In Now To Create A Note
               </h2>
               <p className="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">
-                Sign in now with Google to post a note on the public wall
+                Sign in now with Google to post a note on the public wall.
               </p>
               <button
                 type="button"

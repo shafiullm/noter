@@ -28,7 +28,7 @@ function App() {
             "Notes"
           ) : (
             <img
-              src="favicon_io\noter-logo.png"
+              src="favicon\noter-logo.png"
               alt="Noter"
               className="h-10"
               style={{ cursor: "default" }} // You can adjust the size as needed
